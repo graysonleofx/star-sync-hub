@@ -127,7 +127,11 @@ export const FeaturedCelebrities = () => {
         </div>
 
         <div className="text-center">
-          <Button variant="outline" size="lg">
+          <Button 
+            variant="outline" 
+            size="lg"
+            onClick={() => window.location.href = '/celebrities'}
+          >
             View All Celebrities
           </Button>
         </div>
@@ -186,13 +190,12 @@ const CelebrityCard = ({ celebrity }: { celebrity: typeof featuredCelebrities[0]
         
         <p className="text-muted-foreground text-sm mb-3">{celebrity.category}</p>
         
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-center mb-4">
           <div className="flex items-center space-x-1">
             <Star className="h-4 w-4 fill-accent text-accent" />
             <span className="font-medium">{celebrity.rating}</span>
             <span className="text-muted-foreground text-sm">({celebrity.reviews})</span>
           </div>
-          <span className="font-bold text-lg">${celebrity.price}</span>
         </div>
         
         <Button className="w-full" variant="premium">

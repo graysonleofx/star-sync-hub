@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { MessageCircle, X, Send } from "lucide-react"
+import { MessageCircle, X, Send, Crown } from "lucide-react"
 
 export const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -35,8 +35,8 @@ export const ChatWidget = () => {
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b bg-gradient-premium rounded-t-lg">
             <div className="flex items-center space-x-2">
-              <MessageCircle className="h-5 w-5 text-primary-foreground" />
-              <span className="font-medium text-primary-foreground">Live Support</span>
+              <Crown className="h-5 w-5 text-primary-foreground" />
+              <span className="font-medium text-primary-foreground">Celebrity Experience</span>
             </div>
             <Button
               variant="ghost"

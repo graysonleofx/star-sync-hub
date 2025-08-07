@@ -29,25 +29,34 @@ export const HeroSection = () => {
           <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground leading-tight">
             Book Your Favorite
             <span className="bg-gradient-premium bg-clip-text text-transparent block">
-              Celebrity
+              Celebrities
             </span>
             in Minutes
           </h1>
 
           {/* Description */}
           <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-2xl mx-auto">
-            Connect with A-list celebrities for personalized videos, meet & greets, 
-            and exclusive experiences. Trusted by millions worldwide.
+            Connect with stars for meet & greets, shoutouts, and more. Experience unforgettable moments with your favorite celebrities.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="hero" size="lg" className="min-w-[200px]">
-              Start Booking
+            <Button 
+              variant="hero" 
+              size="lg" 
+              className="min-w-[200px]"
+              onClick={() => window.location.href = '/celebrities'}
+            >
+              Browse Celebrities
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button variant="outline" size="lg" className="min-w-[200px] bg-background/10 border-primary-foreground/30 text-primary-foreground hover:bg-background/20">
-              Browse Celebrities
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="min-w-[200px] bg-background/10 border-primary-foreground/30 text-primary-foreground hover:bg-background/20"
+              onClick={() => window.location.href = '/contact'}
+            >
+              Contact Us
             </Button>
           </div>
 

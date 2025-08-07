@@ -9,7 +9,7 @@ import {
   Heart, 
   Menu, 
   X, 
-  Star,
+  Crown,
   Globe,
   ChevronDown
 } from "lucide-react"
@@ -30,10 +30,10 @@ export const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="bg-gradient-premium p-2 rounded-lg">
-              <Star className="h-6 w-6 text-primary-foreground" />
+              <Crown className="h-6 w-6 text-primary-foreground" />
             </div>
             <span className="text-xl font-bold bg-gradient-premium bg-clip-text text-transparent">
-              StarSync
+              Celebrity Experience
             </span>
           </Link>
 
@@ -42,11 +42,11 @@ export const Header = () => {
             <Link to="/celebrities" className="text-foreground hover:text-accent transition-colors">
               Browse Celebrities
             </Link>
-            <Link to="/how-it-works" className="text-foreground hover:text-accent transition-colors">
-              How It Works
+            <Link to="/contact" className="text-foreground hover:text-accent transition-colors">
+              Contact
             </Link>
-            <Link to="/pricing" className="text-foreground hover:text-accent transition-colors">
-              Pricing
+            <Link to="/#how-it-works" className="text-foreground hover:text-accent transition-colors">
+              How It Works
             </Link>
           </nav>
 
@@ -143,18 +143,18 @@ export const Header = () => {
                   Browse Celebrities
                 </Link>
                 <Link 
-                  to="/how-it-works" 
+                  to="/contact" 
+                  className="text-foreground hover:text-accent transition-colors py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+                <Link 
+                  to="/#how-it-works" 
                   className="text-foreground hover:text-accent transition-colors py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   How It Works
-                </Link>
-                <Link 
-                  to="/pricing" 
-                  className="text-foreground hover:text-accent transition-colors py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Pricing
                 </Link>
               </nav>
             </div>
