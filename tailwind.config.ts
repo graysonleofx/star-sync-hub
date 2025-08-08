@@ -74,12 +74,15 @@ export default {
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-premium': 'var(--gradient-premium)',
 				'gradient-card': 'var(--gradient-card)',
-				'gradient-overlay': 'var(--gradient-overlay)'
+				'gradient-overlay': 'var(--gradient-overlay)',
+				'gradient-celebrity': 'var(--gradient-celebrity)',
+				'gradient-donation': 'var(--gradient-donation)'
 			},
 			boxShadow: {
 				'luxury': 'var(--shadow-luxury)',
 				'card': 'var(--shadow-card)',
-				'glow': 'var(--shadow-glow)'
+				'glow': 'var(--shadow-glow)',
+				'celebrity': 'var(--shadow-celebrity)'
 			},
 			keyframes: {
 				'accordion-down': {

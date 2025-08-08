@@ -45,7 +45,7 @@ export const HowItWorks = () => {
           <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">
             Simple Process
           </Badge>
-          <h2 className="text-4xl font-bold mb-4">How It Works</h2>
+          <h2 className="text-4xl font-bold mb-4 bg-gradient-celebrity bg-clip-text text-transparent">How It Works</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Get started with celebrity bookings in just four simple steps
           </p>

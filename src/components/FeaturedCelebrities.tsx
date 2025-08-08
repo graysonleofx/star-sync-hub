@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { DonationModal } from "@/components/DonationModal"
 import { Star, Heart, ChevronLeft, ChevronRight } from "lucide-react"
 import { useState } from "react"
 
@@ -65,8 +66,10 @@ export const FeaturedCelebrities = () => {
   return (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">Featured Celebrities</h2>
+        <div className="text-center mb-12 animate-fade-up">
+          <h2 className="text-4xl font-bold mb-4 bg-gradient-celebrity bg-clip-text text-transparent">
+            Featured Celebrities
+          </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Book exclusive experiences with A-list celebrities from movies, music, sports, and more
           </p>
@@ -74,8 +77,10 @@ export const FeaturedCelebrities = () => {
 
         {/* Desktop Grid */}
         <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          {featuredCelebrities.map((celebrity) => (
-            <CelebrityCard key={celebrity.id} celebrity={celebrity} />
+          {featuredCelebrities.map((celebrity, index) => (
+            <div key={celebrity.id} className={`animate-fade-up stagger-${(index % 4) + 1}`}>
+              <CelebrityCard celebrity={celebrity} />
+            </div>
           ))}
         </div>
 
@@ -142,25 +147,26 @@ export const FeaturedCelebrities = () => {
 
 const CelebrityCard = ({ celebrity }: { celebrity: typeof featuredCelebrities[0] }) => {
   return (
-    <Card className="overflow-hidden hover:shadow-luxury transition-all duration-300 group bg-gradient-card">
+    <Card className="overflow-hidden hover-lift bg-gradient-card group">
       <div className="relative">
         {/* Placeholder for celebrity image */}
         <div className="aspect-[3/4] bg-gradient-to-br from-muted to-muted-foreground/20 relative overflow-hidden">
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center">
-              <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mb-4 mx-auto">
+              <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
                 <Star className="h-8 w-8 text-primary" />
               </div>
               <p className="text-sm text-muted-foreground">{celebrity.name}</p>
             </div>
           </div>
+          <div className="absolute inset-0 bg-gradient-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
         
         {/* Favorite Button */}
         <Button
           variant="ghost"
           size="icon"
-          className="absolute top-3 right-3 bg-background/80 backdrop-blur-sm hover:bg-accent"
+          className="absolute top-3 right-3 bg-background/80 backdrop-blur-sm hover:bg-accent transition-all duration-300"
         >
           <Heart className="h-4 w-4" />
         </Button>
@@ -179,7 +185,7 @@ const CelebrityCard = ({ celebrity }: { celebrity: typeof featuredCelebrities[0]
       
       <CardContent className="p-4">
         <div className="flex items-center justify-between mb-2">
-          <h3 className="font-semibold text-lg">{celebrity.name}</h3>
+          <h3 className="font-semibold text-lg group-hover:text-primary transition-colors duration-300">{celebrity.name}</h3>
           {celebrity.isVerified && (
             <Badge variant="secondary" className="text-xs">
               <Star className="h-3 w-3 mr-1 fill-current" />
@@ -198,9 +204,24 @@ const CelebrityCard = ({ celebrity }: { celebrity: typeof featuredCelebrities[0]
           </div>
         </div>
         
-        <Button className="w-full" variant="premium">
-          Book Now
-        </Button>
+        <div className="space-y-3">
+          <Button 
+            className="w-full hover:shadow-celebrity transition-all duration-300" 
+            variant="premium"
+            onClick={() => window.location.href = '/booking'}
+          >
+            Book Now
+          </Button>
+          <DonationModal celebrityName={celebrity.name}>
+            <Button 
+              variant="outline" 
+              className="w-full border-2 border-red-500/30 text-red-600 hover:bg-red-50 hover:border-red-500 transition-all duration-300"
+            >
+              <Heart className="h-4 w-4 mr-2" />
+              Donate
+            </Button>
+          </DonationModal>
+        </div>
       </CardContent>
     </Card>
   )

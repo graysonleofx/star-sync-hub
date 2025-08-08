@@ -28,7 +28,7 @@ export const HeroSection = () => {
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground leading-tight">
             Book Your Favorite
-            <span className="bg-gradient-premium bg-clip-text text-transparent block">
+            <span className="bg-gradient-celebrity bg-clip-text text-transparent block">
               Celebrities
             </span>
             in Minutes

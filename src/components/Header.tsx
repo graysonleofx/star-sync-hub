@@ -39,13 +39,13 @@ export const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/celebrities" className="text-foreground hover:text-accent transition-colors">
+            <Link to="/celebrities" className="text-foreground hover:text-accent transition-all duration-300 hover-lift">
               Browse Celebrities
             </Link>
-            <Link to="/contact" className="text-foreground hover:text-accent transition-colors">
+            <Link to="/contact" className="text-foreground hover:text-accent transition-all duration-300 hover-lift">
               Contact
             </Link>
-            <Link to="/#how-it-works" className="text-foreground hover:text-accent transition-colors">
+            <Link to="/#how-it-works" className="text-foreground hover:text-accent transition-all duration-300 hover-lift">
               How It Works
             </Link>
           </nav>
